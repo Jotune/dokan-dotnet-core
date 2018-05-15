@@ -1,8 +1,7 @@
-﻿using DokanNet;
-using NetCoreMirror;
-using System;
+﻿using System;
+using DokanNet;
 
-namespace ConsoleHost
+namespace DokanNetCoreMirror
 {
     class Program
     {

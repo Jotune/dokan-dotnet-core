@@ -10,7 +10,7 @@ using DokanNet.Logging;
 using static DokanNet.FormatProviders;
 using FileAccess = DokanNet.FileAccess;
 
-namespace NetCoreMirror
+namespace DokanNetCoreMirror
 {
     public class Mirror : IDokanOperations
     {
@@ -565,10 +565,11 @@ namespace NetCoreMirror
         {
             try
             {
-                security = info.IsDirectory
-                     ? new FileSecurity(@"D:\Programmes", AccessControlSections.All)
-                     : new FileSecurity(@"D:\App.exe", AccessControlSections.All);
+                security = new FileSecurity();
                 return Trace(nameof(GetFileSecurity), fileName, info, DokanResult.Success, sections.ToString());
+
+                //security = null;
+                //return NtStatus.NotImplemented;
             }
             catch (UnauthorizedAccessException)
             {
